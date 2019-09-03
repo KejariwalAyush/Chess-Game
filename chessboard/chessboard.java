@@ -1,8 +1,9 @@
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 
-public class chessboard extends JFrame{
+public class chessboard extends JFrame {
 
     JFrame f = new JFrame("chess board");
     JPanel p = new JPanel();
@@ -41,13 +42,13 @@ public class chessboard extends JFrame{
     JButton bElephant2 = new JButton(ibelephant);
 
         
-    JButton wsoilder[] = new JButton[8] ;
-    JButton bsoilder[] = new JButton[8] ;
+    JButton b2[] = new JButton[8] ;
+    JButton b7[] = new JButton[8] ;
     
-    JButton blank1[] = new JButton[8];
-    JButton blank2[] = new JButton[8];
-    JButton blank3[] = new JButton[8];
-    JButton blank4[] = new JButton[8];
+    JButton b3[] = new JButton[8];
+    JButton b4[] = new JButton[8];
+    JButton b5[] = new JButton[8];
+    JButton b6[] = new JButton[8];
     
     
     public static void main(String[] args){
@@ -57,7 +58,7 @@ public class chessboard extends JFrame{
     public chessboard(){
         super("chessboard");
 
-        setSize(650,650);
+        setSize(625,650);
         setResizable(false);
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -66,41 +67,48 @@ public class chessboard extends JFrame{
         p.setLayout(null);
         for(int i = 0; i<8;i++)
         {
-            wsoilder[i] = new JButton(iwsoilder);
-            p.add(wsoilder[i]);
-            wsoilder[i].setBounds(i*75,75,75,75);
+            b2[i] = new JButton(iwsoilder);
+            p.add(b2[i]);
+            b2[i].setBounds(i*75,75,75,75);
             
             
-            blank1[i] = new JButton();
-            p.add(blank1[i]);
-            blank1[i].setBounds(i*75,150,75,75);
-            blank2[i] = new JButton();
-            p.add(blank2[i]);
-            blank2[i].setBounds(i*75,225,75,75);
-            blank3[i] = new JButton();
-            p.add(blank3[i]);
-            blank3[i].setBounds(i*75,300,75,75);
-            blank4[i] = new JButton();
-            p.add(blank4[i]);
-            blank4[i].setBounds(i*75,375,75,75);
+            b3[i] = new JButton();
+            p.add(b3[i]);
+            b3[i].setBounds(i*75,150,75,75);
+            b4[i] = new JButton();
+            p.add(b4[i]);
+            b4[i].setBounds(i*75,225,75,75);
+            b5[i] = new JButton();
+            p.add(b5[i]);
+            b5[i].setBounds(i*75,300,75,75);
+            b6[i] = new JButton();
+            p.add(b6[i]);
+            b6[i].setBounds(i*75,375,75,75);
             
-            bsoilder[i] = new JButton(ibsoilder);
-            p.add(bsoilder[i]);
-            bsoilder[i].setBounds(i*75,450,75,75);
+            b7[i] = new JButton(ibsoilder);
+            p.add(b7[i]);
+            b7[i].setBounds(i*75,450,75,75);
             
         }
         
         p.add(wElephant1);
+        wElephant1.setBackground(Color.gray);
         p.add(wHorse1);
+        wHorse1.setBackground(Color.white);
         p.add(wCamel1);
+        wCamel1.setBackground(Color.gray);
         p.add(wKing);
+        wKing.setBackground(Color.white);
         p.add(wQueen);
+        wQueen.setBackground(Color.gray);
         p.add(wCamel2);
+        wCamel2.setBackground(Color.white);
         p.add(wHorse2);
+        wHorse2.setBackground(Color.gray);
         p.add(wElephant2);
+        wElephant2.setBackground(Color.white);
         
         
-
         wElephant1.setBounds(0,0,75,75);
         wHorse1.setBounds(75,0,75,75);
         wCamel1.setBounds(150,0,75,75);
@@ -110,15 +118,42 @@ public class chessboard extends JFrame{
         wHorse2.setBounds(450,0,75,75);
         wElephant2.setBounds(525,0,75,75);
         
-        
+        for(int j=0;j<8;j++){
+        	if((j+1)%2==0){
+        		b2[j].setBackground(Color.gray);
+        		b3[j].setBackground(Color.white);
+        		b4[j].setBackground(Color.gray);
+        		b5[j].setBackground(Color.white);
+    			b6[j].setBackground(Color.gray);
+    			b7[j].setBackground(Color.white);
+        	}
+        	else{
+        		b2[j].setBackground(Color.white);
+        		b4[j].setBackground(Color.white);
+        		b3[j].setBackground(Color.gray);
+        		b6[j].setBackground(Color.white);
+    			b5[j].setBackground(Color.gray);
+    			b7[j].setBackground(Color.gray);
+        	}
+        }
+
+
         p.add(bElephant1);
+        bElephant1.setBackground(Color.white);
         p.add(bHorse1);
+        bHorse1.setBackground(Color.gray);
         p.add(bCamel1);
+        bCamel1.setBackground(Color.white);
         p.add(bKing);
+        bKing.setBackground(Color.white);
         p.add(bQueen);
+        bQueen.setBackground(Color.gray);
         p.add(bCamel2);
+        bCamel2.setBackground(Color.gray);
         p.add(bHorse2);
+        bHorse2.setBackground(Color.white);
         p.add(bElephant2);
+        bElephant2.setBackground(Color.gray);
         
         
 
