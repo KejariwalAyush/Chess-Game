@@ -12,19 +12,19 @@ JButton temp = new JButton();
 JButton src2 = new JButton();
 JButton blank = new JButton();
 
-    ImageIcon ibking = new ImageIcon("C:\\Users\\Kejariwal\\Desktop\\chess pieses\\black king.png");
-    ImageIcon ibqueen = new ImageIcon("C:\\Users\\Kejariwal\\Desktop\\chess pieses\\black queen.png");
-    ImageIcon ibcamel = new ImageIcon("C:\\Users\\Kejariwal\\Desktop\\chess pieses\\black camel.png");
-    ImageIcon ibhorse = new ImageIcon("C:\\Users\\Kejariwal\\Desktop\\chess pieses\\black horse.png");
-    ImageIcon ibelephant = new ImageIcon("C:\\Users\\Kejariwal\\Desktop\\chess pieses\\black elephant.png");
-    ImageIcon ibsoilder = new ImageIcon("C:\\Users\\Kejariwal\\Desktop\\chess pieses\\black soilder.png");  
+    ImageIcon ibking = new ImageIcon("D:\\chess pieses\\black king.png");
+    ImageIcon ibqueen = new ImageIcon("D:\\chess pieses\\black queen.png");
+    ImageIcon ibcamel = new ImageIcon("D:\\chess pieses\\black camel.png");
+    ImageIcon ibhorse = new ImageIcon("D:\\chess pieses\\black horse.png");
+    ImageIcon ibelephant = new ImageIcon("D:\\chess pieses\\black elephant.png");
+    ImageIcon ibsoilder = new ImageIcon("D:\\chess pieses\\black soilder.png");  
     
-    ImageIcon iwking = new ImageIcon("C:\\Users\\Kejariwal\\Desktop\\chess pieses\\white king.png");
-    ImageIcon iwqueen = new ImageIcon("C:\\Users\\Kejariwal\\Desktop\\chess pieses\\white queen.png");
-    ImageIcon iwcamel = new ImageIcon("C:\\Users\\Kejariwal\\Desktop\\chess pieses\\white camel.png");
-    ImageIcon iwhorse = new ImageIcon("C:\\Users\\Kejariwal\\Desktop\\chess pieses\\white horse.png");
-    ImageIcon iwelephant = new ImageIcon("C:\\Users\\Kejariwal\\Desktop\\chess pieses\\white elephant.png");
-    ImageIcon iwsoilder = new ImageIcon("C:\\Users\\Kejariwal\\Desktop\\chess pieses\\white soilder.png");  
+    ImageIcon iwking = new ImageIcon("D:\\chess pieses\\white king.png");
+    ImageIcon iwqueen = new ImageIcon("D:\\chess pieses\\white queen.png");
+    ImageIcon iwcamel = new ImageIcon("D:\\chess pieses\\white camel.png");
+    ImageIcon iwhorse = new ImageIcon("D:\\chess pieses\\white horse.png");
+    ImageIcon iwelephant = new ImageIcon("D:\\chess pieses\\white elephant.png");
+    ImageIcon iwsoilder = new ImageIcon("D:\\chess pieses\\white soilder.png");  
     
 
 
