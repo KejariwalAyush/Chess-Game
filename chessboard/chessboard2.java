@@ -12,32 +12,32 @@ JButton temp = new JButton();
 JButton src2 = new JButton();
 JButton blank = new JButton();
 
-    ImageIcon ibking = new ImageIcon("D:\\chess pieses\\black king.png");
-    ImageIcon ibqueen = new ImageIcon("D:\\chess pieses\\black queen.png");
-    ImageIcon ibcamel = new ImageIcon("D:\\chess pieses\\black camel.png");
-    ImageIcon ibhorse = new ImageIcon("D:\\chess pieses\\black horse.png");
-    ImageIcon ibelephant = new ImageIcon("D:\\chess pieses\\black elephant.png");
-    ImageIcon ibsoilder = new ImageIcon("D:\\chess pieses\\black soilder.png");  
+    ImageIcon ibking = new ImageIcon("C:\\Users\\Kejariwal\\Desktop\\chess pieses\\black king.png");
+    ImageIcon ibqueen = new ImageIcon("C:\\Users\\Kejariwal\\Desktop\\chess pieses\\black queen.png");
+    ImageIcon ibcamel = new ImageIcon("C:\\Users\\Kejariwal\\Desktop\\chess pieses\\black camel.png");
+    ImageIcon ibhorse = new ImageIcon("C:\\Users\\Kejariwal\\Desktop\\chess pieses\\black horse.png");
+    ImageIcon ibelephant = new ImageIcon("C:\\Users\\Kejariwal\\Desktop\\chess pieses\\black elephant.png");
+    ImageIcon ibsoilder = new ImageIcon("C:\\Users\\Kejariwal\\Desktop\\chess pieses\\black soilder.png");  
     
-    ImageIcon iwking = new ImageIcon("D:\\chess pieses\\white king.png");
-    ImageIcon iwqueen = new ImageIcon("D:\\chess pieses\\white queen.png");
-    ImageIcon iwcamel = new ImageIcon("D:\\chess pieses\\white camel.png");
-    ImageIcon iwhorse = new ImageIcon("D:\\chess pieses\\white horse.png");
-    ImageIcon iwelephant = new ImageIcon("D:\\chess pieses\\white elephant.png");
-    ImageIcon iwsoilder = new ImageIcon("D:\\chess pieses\\white soilder.png");  
+    ImageIcon iwking = new ImageIcon("C:\\Users\\Kejariwal\\Desktop\\chess pieses\\white king.png");
+    ImageIcon iwqueen = new ImageIcon("C:\\Users\\Kejariwal\\Desktop\\chess pieses\\white queen.png");
+    ImageIcon iwcamel = new ImageIcon("C:\\Users\\Kejariwal\\Desktop\\chess pieses\\white camel.png");
+    ImageIcon iwhorse = new ImageIcon("C:\\Users\\Kejariwal\\Desktop\\chess pieses\\white horse.png");
+    ImageIcon iwelephant = new ImageIcon("C:\\Users\\Kejariwal\\Desktop\\chess pieses\\white elephant.png");
+    ImageIcon iwsoilder = new ImageIcon("C:\\Users\\Kejariwal\\Desktop\\chess pieses\\white soilder.png");  
     
-
+int i,j;
 
 chessboard2(){  
 //f.addMouseListener();
-    f=new JFrame(); 
+    f=new JFrame("CHESS GAME "); 
 
     //b[row][column] 
       
      
              
-    for(int i=0;i<8;i++){
-        for(int j=0;j<8;j++){
+    for(i=0;i<8;i++){
+        for(j=0;j<8;j++){
             b[i][j] = new JButton();
             f.add(b[i][j]);
             
@@ -62,15 +62,15 @@ chessboard2(){
     f.setVisible(true); 
 
     for(int k=0;k<8;k++){
-    	b[2][k].setText("");
-    	b[3][k].setText("");
-    	b[4][k].setText("");
-    	b[5][k].setText("");
+        b[2][k].setText(" ");
+        b[3][k].setText(" ");
+        b[4][k].setText(" ");
+        b[5][k].setText(" ");
 
-    	b[1][k].setText("b");
-    	b[0][k].setText("b");
-    	b[6][k].setText("w");
-    	b[7][k].setText("w");
+        b[1][k].setText("b");
+        b[0][k].setText("b");
+        b[6][k].setText("w");
+        b[7][k].setText("w");
 
         b[1][k].setIcon(ibsoilder);
         b[6][k].setIcon(iwsoilder);
@@ -108,74 +108,99 @@ public static void main(String[] args) {
 
 int x,y,cnt=0;
 int input=2;
+Color c ;
 
 public void actionPerformed(ActionEvent e)
 {
-	if(e.getSource() instanceof JButton)
-	{
-		src = (JButton) e.getSource();
+    if(e.getSource() instanceof JButton)
+    {
+        src = (JButton) e.getSource();
 
-	}
-	if(cnt==0 && src.getText()!="")
-	{
-		temp.setIcon(src.getIcon());
-		temp.setText(src.getText());
-		src.setIcon(null);
-		src.setText("");
-		cnt++;
-	}
-	else
-	{
-		src2.setIcon(src.getIcon());
-		src2.setText(src.getText());
-		if(src2.getText()!=temp.getText())
-		{
-			src.setIcon(temp.getIcon());
-			src.setText(temp.getText());
-		}
-		temp.setIcon(null);
-		temp.setText("");
-		cnt=0;
-	}
+    }
+
+    
+
+    if(cnt==0 && src.getText()!=" ")
+    {
+        temp.setIcon(src.getIcon());
+        temp.setText(src.getText());
+        c = src.getBackground();
+        src.setBackground(Color.pink);
+        //src.setIcon(null);
+        //src.setText(" ");
+        cnt++;
+        for(i=0;i<8;i++){
+        for(j=0;j<8;j++){
+            if(e.getSource()==b[i][j])
+                {x=i;y=j;}
+        }
+        }
+    }
+    else
+    {
+        src2.setIcon(src.getIcon());
+        src2.setText(src.getText());
+        if(src2.getText().charAt(0)!=temp.getText().charAt(0))
+        {
+            src.setIcon(temp.getIcon());
+            src.setText(temp.getText());
+            b[x][y].setText(" ");
+            b[x][y].setIcon(null);
+            
+        }
+        if(src2.getText()=="wk" && temp.getText().charAt(0) !='w')
+        {
+    
+                input = JOptionPane.showConfirmDialog(f, "black won \n want to restart?");
+                if(input == 1)System.exit(0);
+                else if(input == 0)restart();
+                
+        }
+        else if(src2.getText()=="bk" && temp.getText().charAt(0) !='b')
+        {
+            input = JOptionPane.showConfirmDialog(f, "white won \n want to restart?");
+            if(input == 1)System.exit(0);
+            else if(input == 0)restart();
+                
+    
+        }
+        b[x][y].setBackground(c);
+        temp.setIcon(null);
+        temp.setText(" ");
+        cnt=0;
+    }
 
 
-	if(src2.getText()=="wk"||src2.getText()=="bk")
-	{
-
-			input = JOptionPane.showConfirmDialog(f, (src2.getText().charAt(0))+" want to restart?");
-			if(input == 1)System.exit(0);
-			else if(input == 0)restart();
-			
-	}
-	//if(src.getIcon().equals(ibsoilder)){
-	//	b[x+1][y].setIcon(ibsoilder);
-	//	src.setIcon(null);
-	//}
+    
+    //if(src.getIcon().equals(ibsoilder)){
+    //  b[x+1][y].setIcon(ibsoilder);
+    //  src.setIcon(null);
+    //}
 }
 
-	// getX() and getY() functions return the 
+    // getX() and getY() functions return the 
     // x and y coordinates of the current 
     // mouse position 
     // getClickCount() returns the number of 
     // quick consecutive clicks made by the user 
 
 /*public void mousePressed(MouseEvent e){
-	
-	int x=e.getX();
-	int y=e.getY();
-	b[x][y].setBackground(Color.yellow);
+    
+    int x=e.getX();
+    int y=e.getY();
+    b[x][y].setBackground(Color.yellow);
 
-	for(int a=0;a<8;a++){
-	if(b[x][y]==b[1][a])
-		b[2][a].setBackground(Color.pink);
+    for(int a=0;a<8;a++){
+    if(b[x][y]==b[1][a])
+        b[2][a].setBackground(Color.pink);
 
-	}
-	//b[1][1].setText("hey");
-	}*/
+    }
+    //b[1][1].setText("hey");
+    }*/
 
-	public void restart()
-	{
-		new chessboard2();
-	}
+    public void restart()
+    {
+        new chessboard2();
+    }
 }  
 
