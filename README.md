@@ -1,4 +1,4 @@
-# Chess-Game-
+# Chess-Game
 Chess game which can be played by two users using server
 
 # game is under construction!!!!!
@@ -17,8 +17,10 @@ Chess game which can be played by two users using server
 
 	it will show the version of your java and then
 
-	enter -> cd desktop  
-t	hen enter -> java chessboard
+	  enter -> cd desktop  
+    then enter -> java chessboard
+
 
 	now your game will start 
 	"ENJOY THE GAME  !!!!!!"
+
