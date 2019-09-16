@@ -2,15 +2,19 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;  
   
- class chessboard2 implements ActionListener //, MouseMotionListener
+ class chessboard implements ActionListener
  {  
-JFrame f; 
- //b[row][column] 
-JButton b[][]=new JButton[8][8];  
-JButton src = new JButton();
-JButton temp = new JButton();
-JButton src2 = new JButton();
-JButton blank = new JButton();
+    JFrame f; 
+     //b[row][column] 
+    JButton b[][]=new JButton[8][8];  
+    JButton src = new JButton();
+    JButton temp = new JButton();
+    JButton src2 = new JButton();
+    JButton blank = new JButton();
+
+    JMenuBar mb = new JMenuBar();
+       JMenu file;//rs,ex;
+       JMenuItem rs,ex;
 
     ImageIcon ibking = new ImageIcon("D:\\chess pieses\\black king.png");
     ImageIcon ibqueen = new ImageIcon("D:\\chess pieses\\black queen.png");
@@ -28,12 +32,21 @@ JButton blank = new JButton();
     
 int i,j;
 
-chessboard2(){  
+chessboard(){  
 //f.addMouseListener();
     f=new JFrame("CHESS GAME "); 
 
     //b[row][column] 
-      
+        file = new JMenu("File");
+        
+        rs = new JMenuItem ("Restart");
+        rs.addActionListener(this);
+        file.add(rs);
+        ex = new JMenuItem("Exit");
+        ex.addActionListener(this);
+        file.add(ex);
+        mb.add(file);
+        f.setJMenuBar(mb);
      
              
     for(i=0;i<8;i++){
@@ -67,9 +80,9 @@ chessboard2(){
         b[4][k].setText(" ");
         b[5][k].setText(" ");
 
-        b[1][k].setText("b");
+        b[1][k].setText("bs");
         b[0][k].setText("b");
-        b[6][k].setText("w");
+        b[6][k].setText("ws");
         b[7][k].setText("w");
 
         b[1][k].setIcon(ibsoilder);
@@ -103,22 +116,26 @@ chessboard2(){
 }  
 
 public static void main(String[] args) {  
-    new chessboard2();  
+    new chessboard();  
 }  
 
-int x,y,cnt=0;
+int x,y,cnt=0,cnt2=0;
 int input=2;
 Color c ;
 
 public void actionPerformed(ActionEvent e)
 {
+    if(e.getSource() == rs)restart();
+    if(e.getSource() == ex)System.exit(0);        
+        
     if(e.getSource() instanceof JButton)
     {
         src = (JButton) e.getSource();
 
     }
 
-    
+
+    if(cnt2==0||cnt2==1)
 
     if(cnt==0 && src.getText()!=" ")
     {
@@ -184,23 +201,11 @@ public void actionPerformed(ActionEvent e)
     // getClickCount() returns the number of 
     // quick consecutive clicks made by the user 
 
-/*public void mousePressed(MouseEvent e){
-    
-    int x=e.getX();
-    int y=e.getY();
-    b[x][y].setBackground(Color.yellow);
 
-    for(int a=0;a<8;a++){
-    if(b[x][y]==b[1][a])
-        b[2][a].setBackground(Color.pink);
-
-    }
-    //b[1][1].setText("hey");
-    }*/
 
     public void restart()
     {
-        new chessboard2();
+        new chessboard();
     }
 }  
 
