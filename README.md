@@ -2,6 +2,8 @@
 Chess game which can be played by two users using server
 
 ## game is under construction!!!!!
+all restrictions are for chess game are there 
+but server part not done
 
 ## to start this game general steps for windows user
 
