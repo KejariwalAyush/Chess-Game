@@ -139,7 +139,7 @@ public static void main(String[] args) {
 }  
 
 int x,y,x1,y1,cnt=0,cnt2=0,count=0;
-int input=2;
+int input=2,moves=0;
 boolean t=false;
 Color c ;
 
@@ -157,7 +157,7 @@ public void actionPerformed(ActionEvent e)
 
     if(cnt2==0||cnt2==1)
 
-    if(cnt==0 && src.getText()!=" ")
+    if((cnt==0 && src.getText()!=" ")&& ((moves%2==0 && src.getText().charAt(0)=='w')||(moves%2!=0 && src.getText().charAt(0)=='b')))
     {
         temp.setIcon(src.getIcon());
         temp.setText(src.getText());
@@ -214,6 +214,7 @@ public void actionPerformed(ActionEvent e)
 
         if(t) 
         {
+            moves++;
 
         		if(src2.getText().charAt(0)!=temp.getText().charAt(0))
         		{
