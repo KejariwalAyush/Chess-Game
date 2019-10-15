@@ -16,19 +16,19 @@ Font font = new Font ("Courier",Font.BOLD,00);
  	   JMenu file;//rs,ex;
  	   JMenuItem rs,ex;
 
-    ImageIcon ibking = new ImageIcon("D:\\chess pieses\\black king.png");
-    ImageIcon ibqueen = new ImageIcon("D:\\chess pieses\\black queen.png");
-    ImageIcon ibcamel = new ImageIcon("D:\\chess pieses\\black camel.png");
-    ImageIcon ibhorse = new ImageIcon("D:\\chess pieses\\black horse.png");
-    ImageIcon ibelephant = new ImageIcon("D:\\chess pieses\\black elephant.png");
-    ImageIcon ibsoilder = new ImageIcon("D:\\chess pieses\\black soilder.png");  
+    ImageIcon ibking = new ImageIcon("chess pieses\\black king.png");
+    ImageIcon ibqueen = new ImageIcon("chess pieses\\black queen.png");
+    ImageIcon ibcamel = new ImageIcon("chess pieses\\black camel.png");
+    ImageIcon ibhorse = new ImageIcon("chess pieses\\black horse.png");
+    ImageIcon ibelephant = new ImageIcon("chess pieses\\black elephant.png");
+    ImageIcon ibsoilder = new ImageIcon("chess pieses\\black soilder.png");  
     
-    ImageIcon iwking = new ImageIcon("D:\\chess pieses\\white king.png");
-    ImageIcon iwqueen = new ImageIcon("D:\\chess pieses\\white queen.png");
-    ImageIcon iwcamel = new ImageIcon("D:\\chess pieses\\white camel.png");
-    ImageIcon iwhorse = new ImageIcon("D:\\chess pieses\\white horse.png");
-    ImageIcon iwelephant = new ImageIcon("D:\\chess pieses\\white elephant.png");
-    ImageIcon iwsoilder = new ImageIcon("D:\\chess pieses\\white soilder.png");  
+    ImageIcon iwking = new ImageIcon("chess pieses\\white king.png");
+    ImageIcon iwqueen = new ImageIcon("chess pieses\\white queen.png");
+    ImageIcon iwcamel = new ImageIcon("chess pieses\\white camel.png");
+    ImageIcon iwhorse = new ImageIcon("chess pieses\\white horse.png");
+    ImageIcon iwelephant = new ImageIcon("chess pieses\\white elephant.png");
+    ImageIcon iwsoilder = new ImageIcon("chess pieses\\white soilder.png");  
     
 int i,j,k;
 public char col ;
