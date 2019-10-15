@@ -16,9 +16,7 @@ Chess game which can be played by two users using server
 
 	1. first download jdk on your system  
 
-	2. download this program now copy chess peices folder in your D: drive
-
-	3. copy chessboard.class file to your desktop
+	2. copy chessboard.class file to your desktop
 
 	3. open command prompt on your pc
 
