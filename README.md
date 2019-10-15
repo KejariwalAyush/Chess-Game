@@ -1,9 +1,16 @@
 # Chess-Game
 Chess game which can be played by two users using server
 
+## FEATURES
+	-> on selection of an aobject you will get possible moves 
+	-> if you select another object of same color then it shifts its possible moves to that object
+	-> can EXIT or RESTART the game at any point of time by clicking on the file button on Top Left Corner of Game Screen
+	-> can choose between white and black whichever first player needs at the starting of the game
+	
 ## game is under construction!!!!!
-all restrictions are for chess game are there 
-but server part not done
+	~ as of now you can play this game offline with two players 
+	~ but server part will be updated soon. 
+		Stay tuned !!!
 
 ## to start this game general steps for windows user
 
